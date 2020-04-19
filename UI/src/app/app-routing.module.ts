@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CreateOrderWebComponent } from './create-order/create-order-web/create-order-web.component';
 import { AppStateService } from './auth/app-state.service';
+import { CreateOrderTabComponent } from './create-order/create-order-tab/create-order-tab.component';
+import { CreateOrderMobComponent } from './create-order/create-order-mob/create-order-mob.component';
 
 
 const WebRoutes: Routes = [
@@ -12,12 +14,12 @@ const WebRoutes: Routes = [
 ];
 
 const TabletRoutes: Routes = [
-  { path: '', component: CreateOrderWebComponent },
+  { path: '', component: CreateOrderTabComponent },
   { path: '**', redirectTo: '' }
 ];
 
 const MobileRoutes: Routes = [
-  { path: '', component: CreateOrderWebComponent },
+  { path: '', component: CreateOrderMobComponent },
   { path: '**', redirectTo: '' }
 ];
 
