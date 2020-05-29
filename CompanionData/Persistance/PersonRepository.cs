@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Companion.Models;
+using CompanionData.Models;
 using Companion.Repository;
 using System;
 using System.Collections.Generic;

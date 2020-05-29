@@ -1,4 +1,4 @@
-﻿using Companion.Models;
+﻿using CompanionData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
