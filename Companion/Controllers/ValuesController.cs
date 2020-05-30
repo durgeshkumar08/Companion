@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Serilog;
+using Microsoft.Extensions.Logging;
 
 namespace Companion.Controllers
 {
@@ -14,8 +14,8 @@ namespace Companion.Controllers
     public class ValuesController : Controller
     {
 
-        private readonly ILogger _logger;
-        public ValuesController(ILogger logger)
+        private readonly ILogger<ValuesController> _logger;
+        public ValuesController(ILogger<ValuesController> logger)
         {
             _logger = logger;
         }
@@ -23,7 +23,7 @@ namespace Companion.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            _logger.Error("test");
+            _logger.LogInformation("test");
             return new string[] { "value1", "value2" };
         }
 
