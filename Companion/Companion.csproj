@@ -28,5 +28,9 @@
     <ProjectReference Include="..\CompanionData\CompanionData.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
 
 </Project>

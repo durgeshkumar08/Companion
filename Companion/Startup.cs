@@ -54,7 +54,7 @@ namespace Companion
             app.UseRouting();
 
             app.UseAuthorization();
-            //app.UseCors();
+            app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

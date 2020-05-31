@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Companion.Bll.PersonManagement;
+using CompanionData.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -15,16 +17,19 @@ namespace Companion.Controllers
     {
 
         private readonly ILogger<ValuesController> _logger;
-        public ValuesController(ILogger<ValuesController> logger)
+        private readonly IPersonBll _personBll;
+        public ValuesController(ILogger<ValuesController> logger, IPersonBll personBll)
         {
             _logger = logger;
+            _personBll = personBll;
         }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Person>> Get()
         {
             _logger.LogInformation("test");
-            return new string[] { "value1", "value2" };
+            return _personBll.GetAllPersons();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

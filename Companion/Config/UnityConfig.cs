@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Companion.Bll.PersonManagement;
+using Companion.Persistance;
+using Companion.Repository;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +14,9 @@ namespace Companion.Config
         public static void InitializeUnityConifg(IServiceCollection services)
         {
             //services.AddSingleton<>
+            services.AddScoped<IPersonBll, PersonBll>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
+
         }
     }
 }
