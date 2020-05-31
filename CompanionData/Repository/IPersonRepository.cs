@@ -8,5 +8,6 @@ namespace Companion.Repository
 {
     public interface IPersonRepository : IRepository<Person>
     {
+        List<Person> GetPeople();
     }
 }

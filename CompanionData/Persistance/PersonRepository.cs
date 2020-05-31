@@ -16,28 +16,10 @@ namespace Companion.Persistance
         {
         }
 
-        public void Create(Person entity)
+        public List<Person> GetPeople()
         {
-           this.Create(entity);
+            return FindAll().ToList();
         }
 
-        public void Delete(Person entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<Person> FindAll()
-        {
-            return this.FindAll();
-        }
-        public IQueryable<Person> FindByCondition(Expression<Func<Person, bool>> expression)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Person entity)
-        {
-            this.Update(entity);
-        }
     }
 }

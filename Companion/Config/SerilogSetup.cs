@@ -8,6 +8,7 @@ namespace Companion.Config
 {
     public class SerilogSetup
     {
+        private static char backslash = Path.DirectorySeparatorChar;
         public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -20,7 +21,7 @@ namespace Companion.Config
             return new LoggerConfiguration()
                 .ReadFrom.Configuration(Configuration)
                 .Enrich.FromLogContext()
-                .WriteTo.File("TimeEntryService_.log", rollingInterval: RollingInterval.Day,
+                .WriteTo.File(Directory.GetCurrentDirectory() + $"{backslash}Path{backslash}CompanionService_.log", rollingInterval: RollingInterval.Day,
                         outputTemplate: "{SessionId} {CorelationId} {LoggedInUser} {Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .MinimumLevel.Override("System", LogEventLevel.Warning)
