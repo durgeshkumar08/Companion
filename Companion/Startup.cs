@@ -29,7 +29,6 @@ namespace Companion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddMvc();
             UnityConfig.InitializeUnityConifg(services);
             var ConnectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<c4eContext>(options => options.UseMySQL(ConnectionString));
@@ -55,12 +54,12 @@ namespace Companion
             app.UseRouting();
 
             app.UseAuthorization();
+            //app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            app.UseHttpsRedirection();
-            app.UseCors();
+            
         }
     }
 }

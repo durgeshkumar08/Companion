@@ -37,8 +37,7 @@ namespace Companion
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseKestrel()
-                    .UseIISIntegration()
+                    webBuilder.UseIISIntegration()
                     .UseContentRoot(Directory.GetCurrentDirectory())
                     .UseConfiguration(SerilogSetup.Configuration)
                     .UseSerilog()
